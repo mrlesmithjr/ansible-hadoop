@@ -8,7 +8,7 @@
 - name: debian | ensuring hadoop group exists
   group:
     name: "{{ hadoop_user_info.group }}"
-    state: exists
+    state: present
 
 - name: debian | ensuring hadoop user exists
   user:
@@ -16,7 +16,7 @@
     password: "{{ hadoop_user_info.password }}"
     groups: "{{ hadoop_user_info.group }}"
     append: yes
-    generate_ssh_keys: yes
+    generate_ssh_key: yes
     state: present
 
 - name: debian | ensuring hadoop_home_dir exists
