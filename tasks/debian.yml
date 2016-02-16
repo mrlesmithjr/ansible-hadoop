@@ -35,6 +35,7 @@
   unarchive:
     src: "{{ hadoop_home_dir }}/{{ hadoop_dl_package }}"
     dest: "{{ hadoop_home_dir }}"
+    creates: "{{ hadoop_home_dir }}/hadoop-{{ hadoop_version }}/bin/hadoop"
 
 - name: debian | ensuring hadoop_home_dir permissions are correct
   file:
